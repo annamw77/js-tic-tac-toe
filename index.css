@@ -3,9 +3,10 @@ html {
 }
 
 /***
-GAME BOARD AKA TABLE FORMATTING
+GAME BOARD AKA TABLE SET UP
 ***/
 
+/*entire table*/
 #game-board {
   width: 60%;
   font-size: 6rem;
@@ -24,4 +25,16 @@ GAME BOARD AKA TABLE FORMATTING
 /*vertical lines*/
 #space-1, #space-4, #space-7, #space-2, #space-5, #space-8 {
   border-right:  1px solid black;
+}
+
+/***
+GAME LOGIC CSS FORMATTING
+***/
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
 }
