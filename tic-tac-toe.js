@@ -1,32 +1,38 @@
 $(document).on('ready', function() {
-  console.log('create and begin the game here!');
 
   var game = new TicTacToe();
 
+  function updateMessage() {
+    $('#message').text("Your turn, " + game._current_player)
+  }
+
   $('td').click(function() {
     var td = $(this)
-    
+
     if (game._current_player === "red") {
       td.addClass("red")
-      game.change_player()
+      game.changePlayer()
+      updateMessage()
     } else {
       td.addClass("blue")
-      game.change_player()
+      game.changePlayer()
+      updateMessage()
     }
   })
 })
 
 function TicTacToe() {
   this._current_player = "blue"
-  this._message = "Your turn, " + this._current_player
+  this._message = $('#message').text("Your turn, " + this._current_player)
 
-  this.change_player = function() { //adds time to the counter
+  this.changePlayer = function() {
     if (this._current_player === "blue") {
       this._current_player = "red"
     } else {
       this._current_player = "blue"
     }
   }
+
 }
 
 
@@ -58,10 +64,4 @@ TicTacToe.prototype.nextPlayer = {
   //if current_player = "X"
       //current_player = "O"
   //etc
-}
-
-TicTacToe.prototype.updateMessage = {
-  // if won
-
-  // or current player message
 }
