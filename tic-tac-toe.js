@@ -7,16 +7,18 @@ $(document).on('ready', function() {
   }
 
   $('td').click(function() {
-    var td = $(this)
+    var space = $(this)
 
-    if (game._current_player === "red") {
-      td.addClass("red")
-      game.changePlayer()
-      updateMessage()
-    } else {
-      td.addClass("blue")
-      game.changePlayer()
-      updateMessage()
+    if (game.isSpaceEmpty(space)) {
+      if (game._current_player === "red") {
+        space.addClass("red")
+        game.changePlayer()
+        updateMessage()
+      } else {
+        space.addClass("blue")
+        game.changePlayer()
+        updateMessage()
+      }
     }
   })
 })
@@ -33,18 +35,13 @@ function TicTacToe() {
     }
   }
 
-}
-
-
-TicTacToe.prototype.checkCurrentPlayer = {
-  // return current_player
-}
-
-TicTacToe.prototype.checkIfEmpty = {
-  //if the td does NOT have a class
-  //return true
-  //if the td DOES have a class
-  //return false
+  this.isSpaceEmpty = function(td) {
+    if (td.hasClass('red') || td.hasClass('blue')) {
+      return false
+    } else {
+      return true
+    }
+  }
 }
 
 TicTacToe.prototype.makeMove = {
