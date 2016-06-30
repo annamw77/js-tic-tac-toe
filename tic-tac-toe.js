@@ -8,14 +8,17 @@ $(document).on('ready', function() {
 
   $('td').click(function() {
     var space = $(this)
+    var board = $('#game-board')
 
     if (game.isSpaceEmpty(space)) {
       if (game._current_player === "red") {
         space.addClass("red")
+        game.checkIfGameOver(board,game._current_player)
         game.changePlayer()
         updateMessage()
       } else {
         space.addClass("blue")
+        game.checkIfGameOver(board,game._current_player)
         game.changePlayer()
         updateMessage()
       }
@@ -41,6 +44,28 @@ function TicTacToe() {
     } else {
       return true
     }
+  }
+
+  this.checkIfGameOver = function(board, color) {
+    var won = false
+    if(board.find('#space-1').hasClass(color) && board.find('#space-2').hasClass(color) && board.find('#space-3').hasClass(color)) {
+      won = true
+    } else if (board.find('#space-1').hasClass(color) && board.find('#space-4').hasClass(color) && board.find('#space-7').hasClass(color)) {
+      won = true
+    } else if (board.find('#space-1').hasClass(color) && board.find('#space-5').hasClass(color) && board.find('#space-9').hasClass(color)) {
+      won = true
+    } else if (board.find('#space-4').hasClass(color) && board.find('#space-5').hasClass(color) && board.find('#space-6').hasClass(color)) {
+      won = true
+    } else if (board.find('#space-7').hasClass(color) && board.find('#space-8').hasClass(color) && board.find('#space-9').hasClass(color)) {
+      won = true
+    } else if (board.find('#space-2').hasClass(color) && board.find('#space-5').hasClass(color) && board.find('#space-8').hasClass(color)) {
+      won = true
+    } else if (board.find('#space-3').hasClass(color) && board.find('#space-6').hasClass(color) && board.find('#space-9').hasClass(color)) {
+      won = true
+    } else if (board.find('#space-3').hasClass(color) && board.find('#space-5').hasClass(color) && board.find('#space-7').hasClass(color)) {
+      won = true
+    }
+    return won;
   }
 }
 
