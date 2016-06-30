@@ -1,3 +1,27 @@
 html {
-  
+  text-align: center;
+}
+
+/***
+GAME BOARD AKA TABLE FORMATTING
+***/
+
+#game-board {
+  width: 60%;
+  font-size: 6rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*horizontal lines*/
+#top-row, #middle-row {
+  border-bottom: 1px solid black;
+}
+
+/*vertical lines*/
+#space-1, #space-4, #space-7, #space-2, #space-5, #space-8 {
+  border-right:  1px solid black;
 }
