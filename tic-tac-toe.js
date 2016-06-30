@@ -13,17 +13,22 @@ $(document).on('ready', function() {
     if (game.isSpaceEmpty(space)) {
       if (game._current_player === "red") {
         space.addClass("red")
-        game.checkIfGameOver(board,game._current_player)
+        if (game.checkIfGameOver(board,game._current_player)) {
+          alert(game._current_player + " won!")
+        } else { //keep going
         game.changePlayer()
         updateMessage()
+        }
       } else {
         space.addClass("blue")
-        game.checkIfGameOver(board,game._current_player)
+        if (game.checkIfGameOver(board,game._current_player)) {
+          alert(game._current_player + " won!")
+        } else { //keep going
         game.changePlayer()
         updateMessage()
-      }
+        }
     }
-  })
+  }})
 })
 
 function TicTacToe() {
