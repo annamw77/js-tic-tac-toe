@@ -11,19 +11,19 @@ $(document).on('ready', function() {
     var board = $('#game-board')
 
     if (game.isSpaceEmpty(space)) {
-      if (game._current_player === "red") {
-        space.addClass("red")
-        if (game.checkIfGameOver(board,game._current_player)) {
+      if (game._current_player === "Player 2") {
+        space.addClass("player_2")
+        if (game.checkIfWon(board,game._current_player)) {
           alert(game._current_player + " won!")
-        } else { //keep going
+        } else {
         game.changePlayer()
         updateMessage()
         }
       } else {
-        space.addClass("blue")
-        if (game.checkIfGameOver(board,game._current_player)) {
+        space.addClass("player_1")
+        if (game.checkIfWon(board,game._current_player)) {
           alert(game._current_player + " won!")
-        } else { //keep going
+        } else {
         game.changePlayer()
         updateMessage()
         }
@@ -32,42 +32,42 @@ $(document).on('ready', function() {
 })
 
 function TicTacToe() {
-  this._current_player = "blue"
+  this._current_player = "Player 1"
   this._message = $('#message').text("Your turn, " + this._current_player)
 
   this.changePlayer = function() {
-    if (this._current_player === "blue") {
-      this._current_player = "red"
+    if (this._current_player === "Player 1") {
+      this._current_player = "Player 2"
     } else {
-      this._current_player = "blue"
+      this._current_player = "Player 1"
     }
   }
 
   this.isSpaceEmpty = function(td) {
-    if (td.hasClass('red') || td.hasClass('blue')) {
+    if (td.hasClass('player_2') || td.hasClass('player_1')) {
       return false
     } else {
       return true
     }
   }
 
-  this.checkIfGameOver = function(board, color) {
+  this.checkIfWon = function(board, player) {
     var won = false
-    if(board.find('#space-1').hasClass(color) && board.find('#space-2').hasClass(color) && board.find('#space-3').hasClass(color)) {
+    if(board.find('#space-1').hasClass(player) && board.find('#space-2').hasClass(player) && board.find('#space-3').hasClass(player)) {
       won = true
-    } else if (board.find('#space-1').hasClass(color) && board.find('#space-4').hasClass(color) && board.find('#space-7').hasClass(color)) {
+    } else if (board.find('#space-1').hasClass(player) && board.find('#space-4').hasClass(player) && board.find('#space-7').hasClass(player)) {
       won = true
-    } else if (board.find('#space-1').hasClass(color) && board.find('#space-5').hasClass(color) && board.find('#space-9').hasClass(color)) {
+    } else if (board.find('#space-1').hasClass(player) && board.find('#space-5').hasClass(player) && board.find('#space-9').hasClass(player)) {
       won = true
-    } else if (board.find('#space-4').hasClass(color) && board.find('#space-5').hasClass(color) && board.find('#space-6').hasClass(color)) {
+    } else if (board.find('#space-4').hasClass(player) && board.find('#space-5').hasClass(player) && board.find('#space-6').hasClass(player)) {
       won = true
-    } else if (board.find('#space-7').hasClass(color) && board.find('#space-8').hasClass(color) && board.find('#space-9').hasClass(color)) {
+    } else if (board.find('#space-7').hasClass(player) && board.find('#space-8').hasClass(player) && board.find('#space-9').hasClass(player)) {
       won = true
-    } else if (board.find('#space-2').hasClass(color) && board.find('#space-5').hasClass(color) && board.find('#space-8').hasClass(color)) {
+    } else if (board.find('#space-2').hasClass(player) && board.find('#space-5').hasClass(player) && board.find('#space-8').hasClass(player)) {
       won = true
-    } else if (board.find('#space-3').hasClass(color) && board.find('#space-6').hasClass(color) && board.find('#space-9').hasClass(color)) {
+    } else if (board.find('#space-3').hasClass(player) && board.find('#space-6').hasClass(player) && board.find('#space-9').hasClass(player)) {
       won = true
-    } else if (board.find('#space-3').hasClass(color) && board.find('#space-5').hasClass(color) && board.find('#space-7').hasClass(color)) {
+    } else if (board.find('#space-3').hasClass(player) && board.find('#space-5').hasClass(player) && board.find('#space-7').hasClass(player)) {
       won = true
     }
     return won;

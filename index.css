@@ -31,10 +31,10 @@ GAME BOARD AKA TABLE SET UP
 GAME LOGIC CSS FORMATTING
 ***/
 
-.blue {
+.player_1 {
   background-color: blue;
 }
 
-.red {
+.player_2 {
   background-color: red;
 }
