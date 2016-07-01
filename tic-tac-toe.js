@@ -6,6 +6,11 @@ $(document).on('ready', function() {
     $('#message').text("Your turn, " + game._current_player)
   }
 
+  $('td').hover(
+       function(){ $(this).addClass('space_hover') },
+       function(){ $(this).removeClass('space_hover') }
+  )
+
   $('td').click(function() {
     var space = $(this)
     var board = $('#game-board')

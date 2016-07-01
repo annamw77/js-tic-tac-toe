@@ -33,7 +33,7 @@ GAME BOARD
   font-size: 6rem;
   border-collapse: collapse;
   border-spacing: 0;
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -41,6 +41,13 @@ GAME BOARD
 /*size of each space*/
 td {
   padding: 5rem;
+}
+
+.space_hover {
+  background-image: url("moon.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /*horizontal lines*/
@@ -59,16 +66,16 @@ GAME LOGIC CSS FORMATTING
 
 /*player 1 space marker*/
 .player_1 {
-  background-image: url("wand.png");
-  background-size: contain;
+  background-image: url("locket.png");
+  background-size: 85%;
   background-repeat: no-repeat;
-  background-position: center; 
+  background-position: center;
 }
 
 /*player 2 space marker*/
 .player_2 {
-  background-image: url("locket.png");
-  background-size: contain;
+  background-image: url("locket2.png");
+  background-size: 85%;
   background-repeat: no-repeat;
   background-position: center;
 }
