@@ -1,40 +1,74 @@
 html {
   text-align: center;
+  font-family: 'Delius Unicase', cursive;
+}
+
+body {
+  background-image: url("starsbg.png");
 }
 
 /***
-GAME BOARD AKA TABLE SET UP
+TITLE AND MESSAGE
+***/
+h1 {
+  font-size: 5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  color: #714C91;
+}
+
+#message {
+  font-size: 1.5rem;
+  margin-bottom: 0rem;
+  color: #714C91;
+}
+
+/***
+GAME BOARD
 ***/
 
 /*entire table*/
 #game-board {
-  width: 60%;
+  width: 40%;
   font-size: 6rem;
   border-collapse: collapse;
   border-spacing: 0;
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
 }
 
+/*size of each space*/
+td {
+  padding: 5rem;
+}
+
 /*horizontal lines*/
 #top-row, #middle-row {
-  border-bottom: 1px solid black;
+  border-bottom: .5rem solid #A908E2;
 }
 
 /*vertical lines*/
 #space-1, #space-4, #space-7, #space-2, #space-5, #space-8 {
-  border-right:  1px solid black;
+  border-right: .5rem solid #BB29EF;
 }
 
 /***
 GAME LOGIC CSS FORMATTING
 ***/
 
+/*player 1 space marker*/
 .player_1 {
-  background-color: blue;
+  background-image: url("wand.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; 
 }
 
+/*player 2 space marker*/
 .player_2 {
-  background-color: red;
+  background-image: url("locket.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
