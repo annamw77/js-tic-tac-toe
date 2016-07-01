@@ -10,6 +10,7 @@ body {
 /***
 TITLE AND MESSAGE
 ***/
+
 h1 {
   font-size: 4rem;
   margin-top: 0rem;
@@ -43,8 +44,10 @@ GAME BOARD
 /*size of each space*/
 td {
   padding: 5rem;
+  cursor: pointer;
 }
 
+/*hover img over space*/
 .space_hover {
   background-image: url("moon.png");
   background-size: 40%;
@@ -63,7 +66,7 @@ td {
 }
 
 /***
-GAME LOGIC CSS FORMATTING
+SPACE MARKERS
 ***/
 
 /*player 1 space marker*/
@@ -72,6 +75,7 @@ GAME LOGIC CSS FORMATTING
   background-size: 85%;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all .3s ease-in;
 }
 
 /*player 2 space marker*/
@@ -80,4 +84,5 @@ GAME LOGIC CSS FORMATTING
   background-size: 85%;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all .3s ease-in;
 }
