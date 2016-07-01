@@ -13,7 +13,7 @@ $(document).on('ready', function() {
     if (game.isSpaceEmpty(space)) {
       if (game._current_player === "Player 2") {
         space.addClass("player_2")
-        if (game.checkIfWon(board,game._current_player)) {
+        if (game.checkIfWon(board,"player_2")) {
           alert(game._current_player + " won!")
         } else {
         game.changePlayer()
@@ -21,7 +21,7 @@ $(document).on('ready', function() {
         }
       } else {
         space.addClass("player_1")
-        if (game.checkIfWon(board,game._current_player)) {
+        if (game.checkIfWon(board,"player_1")) {
           alert(game._current_player + " won!")
         } else {
         game.changePlayer()
@@ -72,23 +72,4 @@ function TicTacToe() {
     }
     return won;
   }
-}
-
-TicTacToe.prototype.makeMove = {
-  //if checkIfEmpty is true
-  //change class of TD to "x" or "o"
-  //update display of TD to "x" or "o"
-}
-
-TicTacToe.prototype.checkForWin = {
-  //assess if certain line-ups have the same class
-  //if true, return true
-  //if false, return false
-  //assess for draw if all spaces are filled
-}
-
-TicTacToe.prototype.nextPlayer = {
-  //if current_player = "X"
-      //current_player = "O"
-  //etc
 }
