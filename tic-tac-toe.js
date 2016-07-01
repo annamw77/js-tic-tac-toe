@@ -2,8 +2,8 @@ $(document).on('ready', function() {
 
   var game = new TicTacToe();
 
-  function updateMessage() {
-    $('#message').text("Your turn, " + game._current_player)
+  function updateMessage(message) {
+    $('#message').text(message)
   }
 
   $('td').hover(
@@ -21,30 +21,30 @@ $(document).on('ready', function() {
         if (game.checkIfWon(board,"player_2")) {
           alert(game._current_player + " won!")
           game.reset(board,game)
-          updateMessage()
+          updateMessage("Your turn, " + game._current_player)
         } else {
           if (game.checkIfDraw(board)) {
             alert("It's a draw!")
             game.reset(board,game)
-            updateMessage()
+            updateMessage("Your turn, " + game._current_player)
           }
         game.changePlayer()
-        updateMessage()
+        updateMessage("Your turn, " + game._current_player)
         }
       } else {
         space.addClass("player_1")
         if (game.checkIfWon(board,"player_1")) {
           alert(game._current_player + " won!")
           game.reset(board,game)
-          updateMessage()
+          updateMessage("Your turn, " + game._current_player)
         } else {
           if (game.checkIfDraw(board)) {
             alert("It's a draw!")
             game.reset(board,game)
-            updateMessage()
+            updateMessage("Your turn, " + game._current_player)
           }
         game.changePlayer()
-        updateMessage()
+        updateMessage("Your turn, " + game._current_player)
         }
       }
     }
