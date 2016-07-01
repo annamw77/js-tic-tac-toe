@@ -14,13 +14,14 @@ h1 {
   font-size: 5rem;
   margin-top: 0rem;
   margin-bottom: 0rem;
-  color: #714C91;
+  color: #B345B9;
 }
 
 #message {
   font-size: 1.5rem;
   margin-bottom: 0rem;
-  color: #714C91;
+  color: #F04DB5;
+  font-weight: bold;
 }
 
 /***

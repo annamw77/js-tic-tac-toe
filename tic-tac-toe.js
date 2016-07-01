@@ -107,10 +107,15 @@ function TicTacToe() {
   }
 
   this.reset = function(board,game) {
+    if (game._current_player === "Player 1") {
+      game._current_player = "Player 2"
+    } else {
+      game._current_player = "Player 1"
+    }
+
     board.find('td').each(function() {
       $(this).removeClass('player_1').removeClass('player_2');
     });
-    game._current_player = "Player 1"
   }
 
 }
