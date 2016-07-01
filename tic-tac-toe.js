@@ -16,6 +16,9 @@ $(document).on('ready', function() {
         if (game.checkIfWon(board,"player_2")) {
           alert(game._current_player + " won!")
         } else {
+          if (game.checkIfDraw(board)) {
+            alert("It's a draw!")
+          }
         game.changePlayer()
         updateMessage()
         }
@@ -24,6 +27,9 @@ $(document).on('ready', function() {
         if (game.checkIfWon(board,"player_1")) {
           alert(game._current_player + " won!")
         } else {
+          if (game.checkIfDraw(board)) {
+            alert("It's a draw!")
+          }
         game.changePlayer()
         updateMessage()
         }
@@ -72,4 +78,16 @@ function TicTacToe() {
     }
     return won;
   }
-}
+
+  this.checkIfDraw = function(board) {
+    var draw = false
+    if(board.find('#space-1').is(".player_1,.player_2") && board.find('#space-2').is(".player_1,.player_2") && board.find('#space-3').is(".player_1,.player_2")) {
+      if(board.find('#space-4').is(".player_1,.player_2") && board.find('#space-5').is(".player_1,.player_2") && board.find('#space-6').is(".player_1,.player_2")) {
+        if(board.find('#space-7').is(".player_1,.player_2") && board.find('#space-8').is(".player_1,.player_2") && board.find('#space-9').is(".player_1,.player_2")) {
+          var draw = true
+        }
+      }
+    }
+    console.log(draw)
+  } //end draw function
+} //end entire thing
