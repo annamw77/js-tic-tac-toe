@@ -15,9 +15,13 @@ $(document).on('ready', function() {
         space.addClass("player_2")
         if (game.checkIfWon(board,"player_2")) {
           alert(game._current_player + " won!")
+          game.reset(board,game)
+          updateMessage()
         } else {
           if (game.checkIfDraw(board)) {
             alert("It's a draw!")
+            game.reset(board,game)
+            updateMessage()
           }
         game.changePlayer()
         updateMessage()
@@ -26,16 +30,22 @@ $(document).on('ready', function() {
         space.addClass("player_1")
         if (game.checkIfWon(board,"player_1")) {
           alert(game._current_player + " won!")
+          game.reset(board,game)
+          updateMessage()
         } else {
           if (game.checkIfDraw(board)) {
             alert("It's a draw!")
+            game.reset(board,game)
+            updateMessage()
           }
         game.changePlayer()
         updateMessage()
         }
+      }
     }
-  }})
+  })
 })
+
 
 function TicTacToe() {
   this._current_player = "Player 1"
@@ -89,6 +99,13 @@ function TicTacToe() {
       }
     }
     return draw
-  } //end draw function
+  }
 
-} //end entire thing
+  this.reset = function(board,game) {
+    board.find('td').each(function() {
+      $(this).removeClass('player_1').removeClass('player_2');
+    });
+    game._current_player = "Player 1"
+  }
+
+}
