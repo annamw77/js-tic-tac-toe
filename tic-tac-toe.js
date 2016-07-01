@@ -88,6 +88,7 @@ function TicTacToe() {
         }
       }
     }
-    console.log(draw)
+    return draw
   } //end draw function
+
 } //end entire thing
